@@ -1,0 +1,122 @@
+﻿<Window x:Class="WpfApplication1.xComHelper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="xComHelper" Background="Transparent" AllowsTransparency="True" Stylus.IsPressAndHoldEnabled="False" Height="960.438" Width="1462.895" Focusable="False" Topmost="True" WindowStyle="None" ManipulationStarting="Window_ManipulationStarting_1" ManipulationDelta="Window_ManipulationDelta_1">
+
+    <Border BorderBrush="Black" BorderThickness="0" Background="Transparent">
+
+        <Grid  Background="Transparent">
+
+            <TextBox Name="lblEvent"  Margin="540,25,0,0" Height="326" VerticalAlignment="Top" HorizontalAlignment="Left" Width="365"  Background="Transparent" ScrollViewer.CanContentScroll="True" AcceptsReturn="True" TextWrapping="WrapWithOverflow" Foreground="#FF46989E" Visibility="Visible"/>
+
+
+            <Rectangle Name="cmdOverlay" Fill="#01000000"  IsManipulationEnabled="True" TouchUp="cmdOverlay_TouchUp" MouseRightButtonDown="cmdOverlay_MouseRightButtonDown" Margin="10,0,-10.333,-0.333"/>
+
+            <!--<Rectangle IsManipulationEnabled="True" Fill="#01000000" Margin="-32,-2,31.667,1.667" Stroke="Transparent" TouchDown="Rectangle_TouchDown_1" TouchUp="Rectangle_TouchUp_2" PreviewTouchDown="Rectangle_PreviewTouchDown_1" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown_1" MouseRightButtonDown="Rectangle_MouseRightButtonDown_1"/>-->
+
+
+            <Border Background="Transparent" Name="pnlMoreHolder"  BorderBrush="Red" BorderThickness="0" Margin="88,14,0,0" Height="382" VerticalAlignment="Top" HorizontalAlignment="Left" Width="269">
+                <Grid Margin="0,0,0,0" Background="Transparent" IsManipulationEnabled="True" Height="384" VerticalAlignment="Top" HorizontalAlignment="Left" Width="279" >
+                    
+                    <Button Style="{StaticResource myStyle}" x:Name="cmdClick" Content="Move" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmdClick_TouchDown" TouchUp="cmdClick_TouchUp" Margin="-1,0,0,0"/>
+                    <Button Style="{StaticResource myStyle}" x:Name="cmdOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="79,0,0,0" TouchDown="cmdOK_TouchDown" MouseLeftButtonDown="cmdOK_MouseLeftButtonDown"/>
+                    <Button Style="{StaticResource myStyle}" x:Name="cmdEscape" Content="Esc." HorizontalAlignment="Left" Margin="159,0,0,0" VerticalAlignment="Top" TouchDown="cmdEscape_TouchDown" TouchUp="cmdEscape_TouchUp" />
+                    <Border Background="Transparent" Name="pnlNonAbilityButtons" Margin="0,160,168.667,0" Height="224" VerticalAlignment="Top">
+                        <Grid Margin="0,0,0,0" Background="Transparent">
+                            <Button Style="{StaticResource myStyleSmaller}" Name="cmdRotateLeft" VerticalAlignment="Top" HorizontalAlignment="Left" TouchDown="cmdRotateLeft_TouchDown" TouchUp="cmdRotateLeft_TouchUp" Margin="55,0,0,0" MouseLeftButtonDown="cmdRotateLeft_MouseLeftButtonDown">
+                                <Path Width="38.605" Height="33.2" Stretch="Uniform" UseLayoutRounding="False" Fill="#FF46989E" Data="F1 M 0,9.37503L 2.92499,9.37503C 2.98999,6.78506 3.97876,4.57504 5.89124,2.74503C 7.80374,0.91507 10.095,3.05176e-005 12.765,3.05176e-005C 15.485,3.05176e-005 17.805,0.937531 19.725,2.81253C 21.645,4.68753 22.605,6.95004 22.605,9.60007C 22.605,12.25 21.645,14.5125 19.725,16.3875C 17.805,18.2625 15.485,19.2 12.765,19.2C 10.5,19.2 8.45499,18.5301 6.63,17.19L 8.34,15.4051C 9.67499,16.3351 11.15,16.8 12.765,16.8C 14.84,16.8 16.5988,16.0988 18.0413,14.6963C 19.4837,13.2938 20.205,11.5951 20.205,9.60007C 20.205,7.60507 19.4837,5.90628 18.0413,4.50381C 16.5988,3.10129 14.84,2.40005 12.765,2.40005C 10.75,2.40005 9.02249,3.07755 7.58246,4.43253C 6.14249,5.78757 5.38995,7.43253 5.32498,9.36752L 8.77496,9.36752L 4.34247,14.1451L 0,9.37503 Z " />
+                            </Button>
+
+                            <Button Style="{StaticResource myStyleSmaller}" Name="cmdRotateRight" VerticalAlignment="Top" HorizontalAlignment="Left" TouchDown="cmdRotateRight_TouchDown" TouchUp="cmdRotateRight_TouchUp" MouseLeftButtonDown="cmdRotateRight_MouseLeftButtonDown">
+                                <Path Height="33.2" Width="38.605" Stretch="Uniform" UseLayoutRounding="False" Fill="#FF46989E" Data="F1 M 308.598,419.454C 306.688,417.579 305.733,415.317 305.733,412.667C 305.733,410.017 306.69,407.754 308.602,405.879C 310.515,404.004 312.833,403.067 315.558,403.067C 318.228,403.067 320.522,403.982 322.44,405.812C 324.357,407.642 325.348,409.852 325.413,412.442L 328.391,412.442L 324.003,417.212L 319.548,412.434L 323.013,412.434C 322.948,410.499 322.192,408.854 320.745,407.499C 319.297,406.144 317.568,405.467 315.558,405.467C 313.488,405.467 311.733,406.168 310.293,407.57C 308.853,408.973 308.133,410.672 308.133,412.667C 308.133,414.662 308.853,416.36 310.293,417.763C 311.733,419.165 313.491,419.867 315.566,419.867C 317.176,419.867 318.653,419.402 319.998,418.472L 321.686,420.257C 319.866,421.597 317.823,422.267 315.558,422.267C 312.833,422.267 310.513,421.329 308.598,419.454 Z " />
+                            </Button>
+                            <Button Style="{StaticResource myStyleSmaller}" x:Name="cmdTabLeft" Content="| &lt;" Margin="0,55,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmdTabLeft_TouchDown" TouchUp="cmdTabLeft_TouchUp" MouseLeftButtonDown="cmdTabLeft_MouseLeftButtonDown">
+                            </Button>
+                            <Button Style="{StaticResource myStyleSmaller}" x:Name="cmdTabRight" Content="&gt; |" Margin="55,55,0,0" TouchDown="cmdTabRight_TouchDown" TouchUp="cmdTabRight_TouchUp" VerticalAlignment="Top" HorizontalAlignment="Left" MouseLeftButtonDown="cmdTabRight_MouseLeftButtonDown"/>
+                            <Button Name="cmdDown" Style="{StaticResource myStyleSmaller}" Margin="55,110,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmdDown_TouchDown" TouchUp="cmdDown_TouchUp" MouseLeftButtonDown="cmdDown_MouseLeftButtonDown">
+                                <Viewbox RenderTransformOrigin="0.5,0.5">
+                                    <Viewbox.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0"/>
+                                        </TransformGroup>
+                                    </Viewbox.RenderTransform>
+                                    <Path Width="9.784" Height="7.205" Stretch="Uniform" Fill="#FF46989E" Data="F1 M 10.7852,26.8469L 21.5698,12.8223L 14.7494,12.8223L 14.7494,-3.05176e-005L 6.82028,-3.05176e-005L 6.82028,12.8223L 3.05176e-005,12.8223L 10.7852,26.8469 Z "/>
+                                </Viewbox>
+                            </Button>
+                            <Button Name="cmdUp" Style="{StaticResource myStyleSmaller}" Margin="0,110,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmdUp_TouchDown" TouchUp="cmdUp_TouchUp" MouseLeftButtonDown="cmdUp_MouseLeftButtonDown">
+                                <Viewbox RenderTransformOrigin="0.5,0.5">
+                                    <Viewbox.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="180"/>
+                                        </TransformGroup>
+                                    </Viewbox.RenderTransform>
+                                    <Path Width="9.784" Height="7.205" Stretch="Uniform" Fill="#FF46989E" Data="F1 M 10.7852,26.8469L 21.5698,12.8223L 14.7494,12.8223L 14.7494,-3.05176e-005L 6.82028,-3.05176e-005L 6.82028,12.8223L 3.05176e-005,12.8223L 10.7852,26.8469 Z "/>
+                                </Viewbox>
+                            </Button>
+                            <Button Style="{StaticResource myStyleSmaller}" Name="cmdZoomIn" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,165,0,0" TouchDown="cmdZoomIn_TouchDown" TouchUp="cmdZoomIn_TouchUp" MouseLeftButtonDown="cmdZoomIn_MouseLeftButtonDown">
+                                <Path Width="42.2497" Height="42.2549" Stretch="Uniform" Fill="#FF46989E" Data="F1 M 30.4242,5.2197C 36.4268,11.2262 37.2418,20.4424 32.8851,27.3304L 42.2497,36.6963L 36.6898,42.2549L 27.3239,32.8877C 20.4358,37.2405 11.2197,36.4319 5.2178,30.4215C -1.73926,23.4645 -1.73926,12.1819 5.2178,5.2197C 12.1799,-1.73993 23.4633,-1.73993 30.4242,5.2197 Z M 26.5139,26.514C 31.3108,21.7145 31.3108,13.9319 26.5139,9.1337C 21.7119,4.32788 13.9287,4.32788 9.13245,9.1337C 4.32843,13.9319 4.32843,21.7145 9.13245,26.514C 13.9287,31.3121 21.7119,31.3121 26.5139,26.514 Z M 26.2939,16.4228L 26.2939,19.7536L 19.7991,19.7536L 19.7991,26.2509L 16.4664,26.2498L 16.4664,19.7549L 9.9696,19.7536L 9.9696,16.4228L 16.4664,16.4228L 16.4664,9.92545L 19.7991,9.92545L 19.7991,16.4228L 26.2939,16.4228 Z "/>
+                            </Button>
+                            <Button Style="{StaticResource myStyleSmaller}" Name="cmdZoomOut" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="55,165,0,0" TouchDown="cmdZoomOut_TouchDown" TouchUp="cmdZoomOut_TouchUp" MouseLeftButtonDown="cmdZoomOut_MouseLeftButtonDown">
+                                <Path Width="42.2517" Height="42.2549" Stretch="Uniform" Fill="#FF46989E" Data="F1 M 30.4235,5.2197C 36.4274,11.2262 37.2412,20.4424 32.8858,27.3304L 42.2516,36.6963L 36.6905,42.2549L 27.3246,32.8877C 20.4366,37.2405 11.2205,36.4319 5.2178,30.4215C -1.73932,23.4645 -1.73932,12.1819 5.2178,5.2197C 12.1801,-1.73993 23.4626,-1.73993 30.4235,5.2197 Z M 26.5146,26.514C 31.3115,21.7145 31.3115,13.9319 26.5146,9.1337C 21.7126,4.32788 13.9287,4.32788 9.1319,9.1337C 4.32974,13.9319 4.32974,21.7145 9.1319,26.514C 13.9287,31.3121 21.7126,31.3121 26.5146,26.514 Z M 26.374,20.0894L 9.58365,20.0894L 9.58365,15.721L 26.374,15.721L 26.374,20.0894 Z "/>
+                            </Button>
+
+                            <TextBox Text="Label" Name="lblCoords" Margin="125,50,-245,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="151" Background="White" Visibility="Hidden" Grid.Column="1"/>
+
+                        </Grid>
+                    </Border>
+                    <Button Style="{StaticResource myStyle}" x:Name="cmdEnableDisableScroll" Margin="-1,81,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" TouchDown="cmdEnableDisableScroll_TouchDown" MouseLeftButtonDown="cmdEnableDisableScroll_MouseLeftButtonDown">
+                        <Grid>
+                            <TextBlock FontSize="20" TextWrapping="Wrap" Name="cmdEnableDisableScroll_Text" Margin="0,-13,0,13">Abilities Helper</TextBlock>
+                            <TextBlock FontSize="12" TextWrapping="Wrap" Name="cmdEnableDisableScroll_Text2" Margin="0,14,0,-14">Off</TextBlock>
+                        </Grid>
+                    </Button>
+                    <Button Style="{StaticResource myStyle}" Visibility="Hidden" x:Name="cmdShowNumbers" HorizontalAlignment="Left" Margin="238,0,0,0" VerticalAlignment="Top" TouchDown="cmdShowNumbers_TouchDown">
+                        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Name="cmdShowNumbers_Text" >Show #</TextBlock>
+                    </Button>
+                    <Border Background="Transparent" Name="pnlNumbers" Margin="159,80,0,0" HorizontalAlignment="Left" Width="109" Height="281" VerticalAlignment="Top">
+                        <Grid Background="Transparent" HorizontalAlignment="Left" Width="109" Height="286" VerticalAlignment="Top">
+                            <Button Style="{StaticResource myStyleSmaller}" Content="1" x:Name="cmd1" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd1_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="2" x:Name="cmd2" Margin="0,55,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd2_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="3" x:Name="cmd3" Margin="0,110,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd3_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="4" x:Name="cmd4" Margin="0,165,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd4_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="5" x:Name="cmd5" Margin="0,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd5_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="6" x:Name="cmd6" Margin="55,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd6_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="7" x:Name="cmd7" Margin="55,55,0,0" VerticalAlignment="Top" TouchDown="cmd7_TouchDown" Width="50" HorizontalAlignment="Left"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="8" x:Name="cmd8" Margin="55,110,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd8_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="9" x:Name="cmd9" Margin="55,165,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd9_TouchDown"/>
+                            <Button Style="{StaticResource myStyleSmaller}" Content="0" x:Name="cmd10" Margin="55,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TouchDown="cmd10_TouchDown"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+            </Border>
+
+            <Button Name="cmdHideMore" Style="{StaticResource myStyle}" Margin="30,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="39" Width="39" TouchDown="cmdHideMore_TouchDown" MouseLeftButtonDown="cmdHideMore_MouseLeftButtonDown">
+                <Viewbox RenderTransformOrigin="0.5,0.5">
+                    <Viewbox.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90"/>
+                        </TransformGroup>
+                    </Viewbox.RenderTransform>
+                    <Path Width="9.784" Height="7.205" Stretch="Uniform" Fill="#FF46989E" Data="F1 M 10.7852,26.8469L 21.5698,12.8223L 14.7494,12.8223L 14.7494,-3.05176e-005L 6.82028,-3.05176e-005L 6.82028,12.8223L 3.05176e-005,12.8223L 10.7852,26.8469 Z "/>
+                </Viewbox>
+            </Button>
+            <Button Name="cmdShowMore" Visibility="Hidden" Style="{StaticResource myStyle}" Margin="30,25,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="39" Width="39" TouchDown="cmdShowMore_TouchDown" MouseLeftButtonDown="cmdShowMore_MouseLeftButtonDown">
+                <Viewbox RenderTransformOrigin="0.5,0.5">
+                    <Viewbox.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="270"/>
+                        </TransformGroup>
+                    </Viewbox.RenderTransform>
+                    <Path Width="9.784" Height="7.205" Stretch="Uniform" Fill="#FF46989E" Data="F1 M 10.7852,26.8469L 21.5698,12.8223L 14.7494,12.8223L 14.7494,-3.05176e-005L 6.82028,-3.05176e-005L 6.82028,12.8223L 3.05176e-005,12.8223L 10.7852,26.8469 Z "/>
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource myStyleSmaller}" x:Name="cmdClose" Content="X" Margin="0,10,10,0" VerticalAlignment="Top" Click="cmdClose_Click" HorizontalAlignment="Right"/>
+
+            <!--<Button Style="{StaticResource myStyle}" x:Name="cmdRotateLeft" Content="R-L" HorizontalAlignment="Left" Margin="332,31,0,0" VerticalAlignment="Top" Width="75" Height="67" TouchDown="cmdRotateLeft_TouchDown" TouchUp="cmdRotateLeft_TouchUp"/>
+            <Button Style="{StaticResource myStyle}" x:Name="cmdRotateRight" Content="R-R" HorizontalAlignment="Left" Margin="412,31,0,0" VerticalAlignment="Top" Width="75" Height="67" TouchDown="cmdRotateRight_TouchDown" TouchUp="cmdRotateRight_TouchUp"/>
+            <Button Style="{StaticResource myStyle}" x:Name="cmdTabRight" Content="&gt;|" HorizontalAlignment="Left" Margin="412,103,0,0" VerticalAlignment="Top" Width="75" Height="67" TouchDown="cmdTabRight_TouchDown" TouchUp="cmdTabRight_TouchUp"/>
+            <Button Style="{StaticResource myStyle}" x:Name="cmdTabLeft" Content="|&lt;" HorizontalAlignment="Left" Margin="332,103,0,0" VerticalAlignment="Top" Width="75" Height="67" TouchDown="cmdTabLeft_TouchDown" TouchUp="cmdTabLeft_TouchUp"/>-->
+        </Grid>
+    </Border>
+</Window>
