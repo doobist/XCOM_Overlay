@@ -18,17 +18,24 @@ using System.Windows.Shapes;
 
 namespace XCOM_Overlay
 {
+    //Some issues
+    //1. When touching a button, the mouse gets put over it and it stays highlighted
+    //2. Need a way to click OR touch a button. Right now if we implement touchdown AND click on a button,
+    //   they both get called, instead of either/or.
+    //3. Cannot use click instead of touchdown, because when using click, the mouse coords get placed BEFORE 
+    //   the click method happens. We need to have the click called before the mouse moves (otherwise the mouse 
+    //   moves and the click happens on the new coords, instead of where the mouse WAS. The close button is a 
+    //   click event in case the user has no touch screen.
+    //4. Would be nice if we could place the mouse pointer somewhere, given coordinates. Have tried setting the cursor
+    //   through code, which does move the cursor, but XCOM doesnt register the new position for some reason.
+
+    /// <summary>
+    /// Basically, there is an "transparent" rectangle the size of the window that the user can interact with (tap to click, scroll).
+    /// The buttons are just basic buttons, with touch events, instead of click events.
+    /// I use InputSimulator (http://inputsimulator.codeplex.com/) to send keystrokes and mouse clicks.
+    /// </summary>
     public partial class xComHelper : Window
-    {
-        //Some issues
-        //1. When touching a button, the mouse gets put over it and it stays highlighted
-        //2. Need a way to click OR touch a button. Right now if we implement touchdown AND click on a button,
-        //   they both get called, instead of either/or.
-        //3. Cannot use click instead of touchdown, because when using click, the mouse coords get placed BEFORE 
-        //   the click method happens. We need to have the click called before the mouse moves (otherwise the mouse 
-        //   moves and the click happens on the new coords, instead of where the mouse WAS.
-        //4. Would be nice if we could place the mouse pointer somewhere, given coordinates. Have tried setting the cursor
-        //   through code, which does move the cursor, but XCOM doesnt register the new position for some reason.
+    {    
 
         private const int GWL_EXSTYLE = -20;
         private const int WS_EX_NOACTIVATE = 0x08000000;
